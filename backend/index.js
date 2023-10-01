@@ -14,7 +14,12 @@ app.use(fileUploader({
     tempFileDir : '/tmp/'
 }));
 
+// routes
+app.use("/api/v1/user",require("./routes/userRoutes"));
 
+app.get("/",(req,res)=>{
+    return res.send("<h1>This is home page baby...!!</h1>")
+})
 // connect to mongodb compass
 connect();
 
